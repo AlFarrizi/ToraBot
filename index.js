@@ -1,27 +1,32 @@
-require('dotenv').config();
 const { Client, Collection, GatewayIntentBits } = require('discord.js');
 const fs = require('fs');
+const path = require('path');
+const config = require('./config');
 
 const client = new Client({
   intents: [
     GatewayIntentBits.Guilds,
-    GatewayIntentBits.GuildVoiceStates,
-    GatewayIntentBits.GuildMessages,
-    GatewayIntentBits.MessageContent
+    GatewayIntentBits.GuildVoiceStates
   ]
 });
 
 client.commands = new Collection();
+client.language = require(`./languages/${config.defaultLanguage}.js`);
 
-// Load commands
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
-for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
-  client.commands.set(command.data.name, command);
+const foldersPath = path.join(__dirname, 'commands');
+const commandFolders = fs.readdirSync(foldersPath);
+
+for (const folder of commandFolders) {
+  const commandsPath = path.join(foldersPath, folder);
+  const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+  for (const file of commandFiles) {
+    const command = require(`./commands/${folder}/${file}`);
+    client.commands.set(command.data.name, command);
+  }
 }
 
-// Load events
-const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
+const eventsPath = path.join(__dirname, 'events');
+const eventFiles = fs.readdirSync(eventsPath).filter(file => file.endsWith('.js'));
 for (const file of eventFiles) {
   const event = require(`./events/${file}`);
   if (event.once) {
@@ -31,4 +36,4 @@ for (const file of eventFiles) {
   }
 }
 
-client.login(process.env.DISCORD_TOKEN);
+client.login(config.token);
