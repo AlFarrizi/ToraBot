@@ -1,25 +1,31 @@
 const { REST, Routes } = require('discord.js');
 const fs = require('fs');
-require('dotenv').config();
+const path = require('path');
+const config = require('./config');
 
 const commands = [];
-const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+const foldersPath = path.join(__dirname, 'commands');
+const commandFolders = fs.readdirSync(foldersPath);
 
-for (const file of commandFiles) {
-  const command = require(`./commands/${file}`);
-  commands.push(command.data.toJSON());
+for (const folder of commandFolders) {
+  const commandsPath = path.join(foldersPath, folder);
+  const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
+  for (const file of commandFiles) {
+    const command = require(`./commands/${folder}/${file}`);
+    commands.push(command.data.toJSON());
+  }
 }
 
-const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN);
+const rest = new REST({ version: '10' }).setToken(config.token);
 
 (async () => {
   try {
-    console.log('Deploying slash commands...');
+    console.log('Started refreshing application commands...');
     await rest.put(
-      Routes.applicationGuildCommands(process.env.CLIENT_ID, process.env.GUILD_ID),
-      { body: commands }
+      Routes.applicationGuildCommands(config.clientId, config.guildId),
+      { body: commands },
     );
-    console.log('Slash commands deployed!');
+    console.log('Successfully reloaded application commands.');
   } catch (error) {
     console.error(error);
   }
