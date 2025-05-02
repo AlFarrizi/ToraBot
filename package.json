@@ -1,0 +1,20 @@
+{
+    "name": "discord-music-bot",
+    "version": "1.0.0",
+    "description": "Simple Discord Music Bot using Node.js",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js",
+      "deploy": "node deploy-commands.js"
+    },
+    "author": "YourName",
+    "license": "MIT",
+    "dependencies": {
+      "@discordjs/voice": "^0.16.0",
+      "discord.js": "^14.13.0",
+      "dotenv": "^16.4.5",
+      "yt-search": "^2.10.7",
+      "ytdl-core": "^4.11.2"
+    }
+  }
+  
