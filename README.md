@@ -5,28 +5,39 @@ Bot Discord musik modern dengan dukungan berbagai fitur pemutar lagu dari YouTub
 ✨ Fitur Utama:
 
 🔎 /play [judul/url] — Putar musik dari YouTube, SoundCloud, dll.
+
 ⏯️ /pause, /resume, /stop, /skip — Kontrol penuh pemutaran lagu.
+
 📜 /queue, /nowplaying — Lihat daftar lagu yang sedang dan akan diputar.
+
 🔁 /loop, /shuffle, /clear — Kelola antrian dengan lebih fleksibel.
+
 🔊 /volume — Ubah volume suara bot sesuai kebutuhan.
-🌐 Multi-bahasa — Dukungan bahasa: Indonesia, Inggris, Jepang, Arab, dan banyak lagi.
+
 ⚡ Respons cepat dan antarmuka slash command modern.
 
 📦 Instalasi
 
 Clone repo:
-
+```bash
 git clone https://github.com/username/discord-music-bot.git
 cd discord-music-bot
+```
+
 Instal dependensi:
-
+```bash
 pip install -r requirements.txt
+```
+
 Atur .env:
-
+```bash
 DISCORD_TOKEN=YOUR_BOT_TOKEN
-Jalankan bot:
+```
 
+Jalankan bot:
+```bash
 python bot.py
+```
 
 | Command       | Fungsi                                     |
 | ------------- | ------------------------------------------ |
