@@ -5,15 +5,10 @@ Bot Discord musik modern dengan dukungan berbagai fitur pemutar lagu dari YouTub
 ✨ Fitur Utama:
 
 🔎 /play [judul/url] — Putar musik dari YouTube, SoundCloud, dll.
-
 ⏯️ /pause, /resume, /stop, /skip — Kontrol penuh pemutaran lagu.
-
 📜 /queue, /nowplaying — Lihat daftar lagu yang sedang dan akan diputar.
-
 🔁 /loop, /shuffle, /clear — Kelola antrian dengan lebih fleksibel.
-
 🔊 /volume — Ubah volume suara bot sesuai kebutuhan.
-
 ⚡ Respons cepat dan antarmuka slash command modern.
 
 📦 Instalasi
