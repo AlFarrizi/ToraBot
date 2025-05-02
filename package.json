@@ -1,5 +1,5 @@
 {
-    "name": "discord-music-bot",
+    "name": "tora-bot",
     "version": "1.0.0",
     "description": "Simple Discord Music Bot using Node.js",
     "main": "index.js",
@@ -7,7 +7,7 @@
       "start": "node index.js",
       "deploy": "node deploy-commands.js"
     },
-    "author": "YourName",
+    "author": "AlFarrizi",
     "license": "MIT",
     "dependencies": {
       "@discordjs/voice": "^0.16.0",
