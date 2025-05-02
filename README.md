@@ -40,7 +40,7 @@ python bot.py
 | `🔀 /shuffle`    | Mengacak lagu dalam antrian                |
 | `📶 /ping`       | Melihat latensi bot                        |
 | `🆘 /help`       | Menampilkan daftar perintah bot            |
-| `🆘 /languages`  | Memilih Bahasa yang ingin diubah           |
+| `📚 /languages`  | Memilih Bahasa yang ingin diubah           |
 
 💡 Informasi Tambahan:
 
