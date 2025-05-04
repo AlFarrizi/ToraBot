@@ -1,7 +1,7 @@
 {
     "name": "tora-bot",
     "version": "1.0.0",
-    "description": "Simple Discord Music Bot using Node.js",
+    "description": "Bot Musik Discord Sederhana menggunakan Node.js",
     "main": "index.js",
     "scripts": {
       "start": "node index.js",
