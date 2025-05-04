@@ -6,8 +6,8 @@ Bot Discord musik modern dengan dukungan berbagai fitur pemutar lagu dari YouTub
 
 Clone repo:
 ```bash
-git clone https://github.com/AlFarrizi/tora-bot.git
-cd tora-bot
+git clone https://github.com/AlFarrizi/ToraBot.git
+cd ToraBot
 ```
 
 Instal dependensi:
